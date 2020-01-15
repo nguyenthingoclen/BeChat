@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/colorMainBlue">
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="40dp"
+		android:layout_marginTop="10dp"
+		android:text="@string/profile"
+		android:textColor="@color/colorWhite"
+		android:textSize="30sp"
+		android:textStyle="bold" />
+
+	<ImageView
+		android:id="@+id/imgSettingProfile"
+		android:layout_width="25dp"
+		android:layout_height="25dp"
+		android:layout_alignParentEnd="true"
+		android:layout_marginTop="18dp"
+		android:layout_marginEnd="20dp"
+		android:background="@drawable/ic_settings_black_24dp" />
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_marginTop="150dp"
+		android:background="@drawable/bg_chat">
+
+		<TextView
+			android:id="@+id/nameUserProfile"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="70dp"
+			android:layout_centerHorizontal="true"
+			android:text="@string/user_name"
+			android:textSize="30dp"
+			android:textColor="@color/colorMainBlue"
+			/>
+		<TextView
+			android:id="@+id/emailUserProfile"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="nguyenthingoclen1613@gmail.com"
+			android:layout_below="@+id/nameUserProfile"
+			android:layout_centerHorizontal="true"
+			/>
+
+	</RelativeLayout>
+
+	<ImageView
+		android:id="@+id/avatarUserProfile"
+		android:layout_width="120dp"
+		android:layout_height="120dp"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="95dp"
+		android:background="@drawable/ic_user"
+		/>
+
+	<Button
+		android:id="@+id/logoutBtn"
+		android:layout_width="match_parent"
+		android:layout_height="48dp"
+		android:background="@drawable/bg_red_button"
+		android:text="Log out"
+		android:gravity="center"
+		android:textSize="@dimen/sp_15"
+		android:textColor="@color/colorWhite"
+		android:layout_marginStart="15dp"
+		android:layout_marginEnd="15dp"
+		android:layout_marginTop="15dp"
+		android:layout_marginBottom="20dp"
+		android:textAllCaps="false"
+		android:layout_alignParentBottom="true"
+		/>
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	app:startDestination="@id/chatFragment"
+	android:id="@+id/navigation_main">
+	<fragment
+		android:id="@+id/chatFragment"
+		android:name="com.example.bechat.ui.chatList.ChatFragment"
+		android:label="ChatFragment"
+		tools:layout="@layout/fragment_chat"
+		>
+
+	</fragment>
+	<fragment
+		android:id="@+id/userFragment"
+		android:name="com.example.bechat.ui.userlist.UserFragment"
+		android:label="UserFragment"
+		tools:layout="@layout/fragment_user"
+		>
+
+	</fragment>
+	<fragment
+		android:id="@+id/profileFragment"
+		android:name="com.example.bechat.ui.ProfileFragment"
+		android:label="ProfileFragment"
+		tools:layout="@layout/fragment_profile"
+		>
+
+	</fragment>
+	<fragment
+		android:id="@+id/chatDetailFragment"
+		android:name="com.example.bechat.ui.chatdetail.ChatDetailFragment"
+		android:label="ChatDetailFragment"
+		tools:layout="@layout/fragment_chat_detail"
+		>
+
+	</fragment>
+</navigation>
