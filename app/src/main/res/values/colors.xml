@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff2998ff</color>
+    <color name="colorPrimaryDark">#3F51B5</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorWhite">#fff</color>
+    <color name="whiteGrayColor">#F9F9F9</color>
+    <color name="colorMainBlue">#ff2998ff</color>
+    <color name="colorBlack">#050505</color>
+    <color name="grayEdit">#F5F5F5</color>
+    <color name="shadowButton">#3F51B5</color>
+    <color name="colorGray">#C7C2BE</color>
+
+</resources>

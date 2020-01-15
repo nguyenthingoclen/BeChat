@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">BeChat</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="password_confirm">Confirm_Password</string>
+    <string name="forgot_password">Forgot password ?</string>
+    <string name="user_name">User name</string>
+    <string name="login_facebook">Login with Facebook</string>
+    <string name="login_google">Login with Google</string>
+    <string name="create">Create</string>
+    <string name="name1">Name</string>
+    <string name="cancel">Cancel</string>
+    <string name="do_not_have_account">Don\'t have an account ?</string>
+    <string name="sign_up">
+        <u>Sign up</u>
+    </string>
+    <string name="camera">Camera</string>
+    <string name="library">Library</string>
+    <string name="reset">Reset Password</string>
+    <string name="chat">Chats</string>
+    <string name="user">Uses</string>
+    <string name="profile">Profile</string>
+    <string name="search">Search...</string>
+    <string name="enter_mess">Enter message...</string>
+    <string name="input_mess">input message,please...</string>
+
+</resources>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:background="@color/colorWhite"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<com.example.bechat.customview.ToolbarView
+		android:layout_width="match_parent"
+		android:layout_height="?android:attr/actionBarSize"
+		app:style="title"
+		app:text_act="@string/login"
+		android:id="@+id/toolbar"
+		app:contentInsetEnd="0dp"
+		app:contentInsetStart="0dp"
+		android:background="?attr/colorPrimary"
+		app:popupTheme="?attr/actionBarPopupTheme"
+		app:layout_constraintTop_toTopOf="parent" />
+	<ScrollView
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		app:layout_constraintTop_toBottomOf="@+id/toolbar"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintBottom_toTopOf="@id/signUpCard"
+		>
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			android:gravity="center_horizontal"
+			>
+
+	<ImageView
+		android:id="@+id/imageView"
+		android:layout_width="70dp"
+		android:layout_height="70dp"
+		android:background="@drawable/ic_app"
+		android:layout_marginTop="70dp"
+
+		/>
+	<EditText
+		android:id="@+id/emailEdittext"
+		android:layout_width="match_parent"
+		android:layout_height="48dp"
+		android:hint="@string/email"
+		android:background="@drawable/bg_edit_text"
+		android:paddingStart="20dp"
+		android:inputType="textEmailAddress"
+		android:textSize="@dimen/sp_13"
+		android:layout_marginStart="15dp"
+		android:layout_marginEnd="15dp"
+		android:layout_marginTop="50dp"/>
+	<EditText
+		android:id="@+id/passwordEdittext"
+		android:layout_width="match_parent"
+		android:layout_height="48dp"
+		android:background="@drawable/bg_edit_text"
+		android:hint="@string/password"
+		android:drawableEnd="@drawable/ic_hide"
+		android:paddingEnd="10dp"
+		android:paddingStart="20dp"
+		android:inputType="textPassword"
+		android:textSize="@dimen/sp_13"
+		android:layout_marginStart="15dp"
+		android:layout_marginEnd="15dp"
+		android:layout_marginTop="15dp"/>
+	<Button
+		android:id="@+id/loginBtn"
+		android:layout_width="match_parent"
+		android:layout_height="48dp"
+		android:background="@drawable/bg_button"
+		android:text="@string/login"
+		android:gravity="center"
+		android:textSize="@dimen/sp_15"
+		android:textColor="@color/colorWhite"
+		android:layout_marginStart="15dp"
+		android:layout_marginEnd="15dp"
+		android:layout_marginTop="15dp"
+		android:textAllCaps="false"
+		/>
+	<TextView
+		android:id="@+id/forgottext"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/forgot_password"
+		android:textSize="@dimen/sp_12"
+		android:layout_marginEnd="8dp"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="10dp"/>
+	<TextView
+		android:id="@+id/loginFacebookText"
+		android:layout_width="170dp"
+		android:layout_height="40dp"
+		android:drawableStart="@drawable/ic_facebook"
+		android:paddingStart="5dp"
+		android:paddingEnd="5dp"
+		android:text="@string/login_facebook"
+		android:textSize="@dimen/sp_13"
+		android:gravity="center"
+		android:singleLine="true"
+		android:background="@drawable/bg_edit_text"
+		android:layout_marginTop="50dp"/>
+
+	<TextView
+		android:id="@+id/loginGoogleText"
+		android:layout_width="170dp"
+		android:layout_height="40dp"
+		android:drawableStart="@drawable/ic_search"
+		android:paddingStart="5dp"
+		android:paddingEnd="5dp"
+		android:text="@string/login_google"
+		android:textSize="@dimen/sp_13"
+		android:gravity="center"
+		android:singleLine="true"
+		android:background="@drawable/bg_edit_text"
+		android:layout_marginTop="10dp"
+		android:layout_marginBottom="30dp"/>
+		</LinearLayout>
+
+	</ScrollView>
+
+	<androidx.cardview.widget.CardView
+		android:layout_width="match_parent"
+		android:layout_height="45dp"
+		android:id="@+id/signUpCard"
+		android:background="@color/whiteGrayColor"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent">
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			>
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/do_not_have_account"
+				android:layout_centerVertical="true"
+				android:id="@+id/dontText"
+				android:textSize="@dimen/sp_11"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				android:layout_marginTop="8dp"
+				app:layout_constraintTop_toTopOf="parent"
+				android:layout_marginBottom="8dp"
+				app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.45"/>
+			<TextView
+				android:layout_width="60dp"
+				android:layout_height="match_parent"
+				android:layout_centerVertical="true"
+				android:gravity="center_vertical"
+				android:text="@string/sign_up"
+				android:textSize="@dimen/sp_11"
+				android:id="@+id/signUpText"
+				android:layout_marginStart="3dp"
+				app:layout_constraintStart_toEndOf="@+id/dontText"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintHorizontal_bias="0.0"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

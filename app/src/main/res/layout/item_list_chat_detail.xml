@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:background="@color/colorWhite"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+
+	<RelativeLayout
+		android:id="@+id/itemLeftChat"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+
+		<ImageView
+			android:id="@+id/avatarLeftImg"
+			android:layout_width="30dp"
+			android:layout_height="30dp"
+			android:background="@drawable/ic_user"
+			android:layout_marginTop="5dp"
+			android:layout_marginStart="5dp"
+			/>
+		<TextView
+			android:id="@+id/messLeftTx"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@id/avatarLeftImg"
+			android:text="@string/enter_mess"
+			android:padding="5dp"
+			android:textSize="12sp"
+			android:layout_marginStart="10dp"
+			android:layout_marginTop="5dp"
+			android:background="@drawable/bg_mess_left_item"
+			/>
+		<TextView
+			android:id="@+id/timeMessLeftTx"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="12/12/2012"
+			android:layout_toRightOf="@id/avatarLeftImg"
+			android:layout_below="@+id/messLeftTx"
+			android:layout_marginStart="20dp"
+			android:textSize="8sp"
+			android:layout_marginTop="5dp"
+			android:visibility="gone"
+			/>
+
+	</RelativeLayout>
+	<RelativeLayout
+		android:id="@+id/itemRightChat"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+
+		<TextView
+			android:id="@+id/messRightTx"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/enter_mess"
+			android:layout_alignParentEnd="true"
+			android:padding="5dp"
+			android:textSize="12sp"
+			android:textColor="@color/colorWhite"
+			android:layout_marginStart="10dp"
+			android:layout_marginTop="2dp"
+			android:layout_marginEnd="5dp"
+			android:background="@drawable/bg_mess_right_item"
+			/>
+		<TextView
+			android:id="@+id/timeMessRightTx"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="12/12/2012"
+			android:layout_marginEnd="25dp"
+			android:textSize="8sp"
+			android:layout_marginTop="5dp"
+			android:layout_below="@+id/messRightTx"
+			android:layout_alignParentEnd="true"
+			android:visibility="gone"
+			/>
+
+
+	</RelativeLayout>
+
+</LinearLayout>

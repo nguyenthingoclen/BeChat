@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:background="@color/colorWhite"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<RelativeLayout
+		android:id="@+id/toolbarChatDetail"
+		android:layout_width="match_parent"
+		android:layout_height="?android:attr/actionBarSize"
+		app:layout_constraintTop_toTopOf="parent"
+		android:background="@color/grayEdit">
+
+		<ImageView
+			android:id="@+id/backImg"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@drawable/ic_back"
+			android:layout_centerVertical="true"
+			android:layout_marginStart="10dp"
+			/>
+		<ImageView
+			android:id="@+id/avatarUserChatDetailImg"
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:background="@drawable/ic_user"
+			android:layout_toRightOf="@id/backImg"
+			android:layout_marginStart="15dp"
+			android:layout_centerVertical="true"
+			/>
+		<TextView
+			android:id="@+id/nameUserDetailChatTx"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:singleLine="true"
+			android:text="@string/user_name"
+			android:layout_toRightOf="@id/avatarUserChatDetailImg"
+			android:layout_marginStart="10dp"
+			android:layout_centerVertical="true"
+			android:textColor="@color/colorMainBlue"
+			/>
+	</RelativeLayout>
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/chatDetailRecyclerView"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		app:layout_constraintTop_toBottomOf="@id/toolbarChatDetail"
+		android:layout_marginStart="20dp"
+		android:layout_marginEnd="20dp"
+		app:layout_constraintBottom_toTopOf="@id/messETx"
+		/>
+
+	<EditText
+		android:id="@+id/messETx"
+		android:layout_width="0dp"
+		android:layout_height="40dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		android:background="@drawable/bg_edit_text"
+		android:layout_marginStart="20dp"
+		android:layout_marginEnd="15dp"
+		app:layout_constraintEnd_toStartOf="@id/sendBtn"
+		app:layout_constraintStart_toStartOf="parent"
+		android:layout_marginBottom="20dp"
+		android:hint="@string/enter_mess"
+		android:textSize="15dp"
+		android:paddingLeft="5dp"
+		/>
+	<ImageView
+		android:id="@+id/sendBtn"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		android:background="@drawable/ic_send_blue_24dp"
+		android:layout_marginBottom="30dp"
+		android:layout_marginEnd="10dp"
+		/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
