@@ -43,6 +43,7 @@ class ChatFragment :Fragment(){
                 var bundle = Bundle()
                 bundle.putString("user",user.id)
                 view.findNavController().navigate(R.id.chatDetailFragment,bundle)
+                Util.hideKeyboard(context!!,view)
             }
 
         })
