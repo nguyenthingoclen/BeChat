@@ -179,11 +179,11 @@ class SignUpActivity : AppCompatActivity(){
                             reference.setValue(user).addOnCompleteListener(object : OnCompleteListener<Void> {
                                 override fun onComplete(p0: Task<Void>) {
                                     sharedPreferences.setStatus(true)
+                                    sharedPreferences.setPassword(passWordRegisterEdit.text.toString())
                                     var intent = Intent(this@SignUpActivity,MainActivity ::class.java)
                                     startActivity(intent)
                                     finish()
                                 }
-
                             })
 
                         }

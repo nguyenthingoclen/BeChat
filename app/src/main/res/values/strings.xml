@@ -4,7 +4,7 @@
     <string name="register">Register</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="password_confirm">Confirm_Password</string>
+    <string name="password_confirm">Confirm Password</string>
     <string name="forgot_password">Forgot password ?</string>
     <string name="user_name">User name</string>
     <string name="login_facebook">Login with Facebook</string>
@@ -25,5 +25,17 @@
     <string name="search">Search...</string>
     <string name="enter_mess">Enter message...</string>
     <string name="input_mess">input message,please...</string>
+    <string name="edit">Edit</string>
+    <string name="view_avatar">View Avatar</string>
+    <string name="edit_avatar">Edit Avatar</string>
+    <string name="back">Back</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="new_name_user">New Name User</string>
+    <string name="new_pass_user">New Password</string>
+    <string name="password_new_confirm">Confirm New Password</string>
+    <string name="save">Save</string>
+    <string name="old_password">Old Password</string>
+    <string name="language">Language</string>
+    <string name="theme">Theme</string>
 
 </resources>

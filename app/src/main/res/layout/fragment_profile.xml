@@ -15,15 +15,6 @@
 		android:textSize="30sp"
 		android:textStyle="bold" />
 
-	<ImageView
-		android:id="@+id/imgSettingProfile"
-		android:layout_width="25dp"
-		android:layout_height="25dp"
-		android:layout_alignParentEnd="true"
-		android:layout_marginTop="18dp"
-		android:layout_marginEnd="20dp"
-		android:background="@drawable/ic_settings_black_24dp" />
-
 	<RelativeLayout
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
@@ -36,7 +27,6 @@
 			android:layout_height="wrap_content"
 			android:layout_marginTop="70dp"
 			android:layout_centerHorizontal="true"
-			android:text="@string/user_name"
 			android:textSize="30dp"
 			android:textColor="@color/colorMainBlue"
 			/>
@@ -44,10 +34,101 @@
 			android:id="@+id/emailUserProfile"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="nguyenthingoclen1613@gmail.com"
 			android:layout_below="@+id/nameUserProfile"
 			android:layout_centerHorizontal="true"
 			/>
+
+		<TextView
+			android:id="@+id/editUserNameTx"
+			android:layout_width="match_parent"
+			android:layout_height="48dp"
+			android:layout_marginStart="15dp"
+			android:layout_marginTop="35dp"
+			android:layout_marginEnd="15dp"
+			android:text="@string/user_name"
+			android:gravity="center_vertical"
+			android:background="@drawable/bg_edit_text"
+			android:layout_below="@+id/emailUserProfile"
+			android:drawableEnd="@drawable/ic_edit"
+			android:paddingStart="20dp"
+			android:textSize="@dimen/sp_13" />
+
+		<TextView
+			android:id="@+id/editPasswordTx"
+			android:layout_width="match_parent"
+			android:layout_height="48dp"
+			android:layout_marginStart="15dp"
+			android:layout_marginTop="5dp"
+			android:layout_marginEnd="15dp"
+			android:text="@string/password"
+			android:gravity="center_vertical"
+			android:background="@drawable/bg_edit_text"
+			android:layout_below="@+id/editUserNameTx"
+			android:drawableEnd="@drawable/ic_edit"
+			android:paddingStart="20dp"
+			android:textSize="@dimen/sp_13" />
+
+		<RelativeLayout
+			android:id="@+id/editLanguagePlace"
+			android:layout_width="match_parent"
+			android:layout_height="48dp"
+			android:layout_marginStart="15dp"
+			android:layout_marginTop="30dp"
+			android:layout_marginEnd="15dp"
+			android:background="@drawable/bg_edit_text"
+			android:layout_below="@+id/editPasswordTx"
+			>
+			<TextView
+				android:id="@+id/languageTx"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/language"
+				android:gravity="center_vertical"
+				android:background="@drawable/bg_edit_text"
+				android:layout_marginTop="5dp"
+				android:layout_marginStart="20dp"
+				android:textSize="@dimen/sp_13" />
+
+			<TextView
+				android:id="@+id/languageChoseTx"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="EN"
+				android:gravity="center_vertical"
+				android:background="@drawable/bg_edit_text"
+				android:layout_marginTop="3dp"
+				android:layout_marginStart="30dp"
+				android:layout_below="@id/languageTx"
+				android:textColor="@color/colorBlack"
+				android:textSize="@dimen/sp_13" />
+
+			<ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentEnd="true"
+				android:src="@drawable/ic_edit"
+				android:layout_centerVertical="true"
+				/>
+		</RelativeLayout>
+
+
+
+		<TextView
+			android:id="@+id/editThemeTx"
+			android:layout_width="match_parent"
+			android:layout_height="48dp"
+			android:layout_marginStart="15dp"
+			android:layout_marginTop="5dp"
+			android:layout_marginEnd="15dp"
+			android:text="@string/theme"
+			android:gravity="center_vertical"
+			android:background="@drawable/bg_edit_text"
+			android:layout_below="@+id/editLanguagePlace"
+			android:drawableEnd="@drawable/ic_edit"
+			android:paddingStart="20dp"
+			android:textSize="@dimen/sp_13" />
+
+
 
 	</RelativeLayout>
 

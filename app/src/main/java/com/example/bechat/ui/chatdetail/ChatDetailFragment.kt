@@ -48,7 +48,6 @@ class ChatDetailFragment: Fragment() {
         chatDetailRecyclerView.adapter = adapter
         getUser(currentUser!!.uid)
 
-        Log.d("TAG:ChatDetailFragment",user?.friends.toString())
         getMessage()
         val idReceiver = arguments?.getString("user")
         reference = FirebaseDatabase.getInstance().getReference("Users").child(idReceiver!!)
@@ -58,6 +57,7 @@ class ChatDetailFragment: Fragment() {
 
             override fun onDataChange(p0: DataSnapshot) {
                 receiver = p0.getValue(User ::class.java)
+
                 nameUserDetailChatTx.text = receiver?.username
                 if (!receiver?.avatarURL.equals("default")){
                     Glide.with(context!!)
@@ -70,12 +70,17 @@ class ChatDetailFragment: Fragment() {
 
         })
 
+        messETx.setOnFocusChangeListener { v, hasFocus ->
+            if (!hasFocus){
+                Util.hideKeyboard(context!!, messETx)
+            }
+        }
+
         sendBtn.setOnClickListener{
             var message = messETx.text.toString()
             if (message.isEmpty()){
                 Toast.makeText(context,getString(R.string.input_mess),Toast.LENGTH_SHORT).show()
             }else{
-                Util.hideKeyboard(context!!,it)
                 sendMessage(message)
                 messETx.setText("")
             }
@@ -83,7 +88,6 @@ class ChatDetailFragment: Fragment() {
         backImg.setOnClickListener {
             (activity as MainActivity).showBottomNavigation()
             (activity as MainActivity).handleronBackPressed(isDetail = false)
-
             view.findNavController().navigateUp()
         }
     }

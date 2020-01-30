@@ -49,10 +49,6 @@ class UserFragment :Fragment(){
             }
 
         })
-        imgSettingUser.setOnClickListener {
-
-
-        }
 
         searchUserETx.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {

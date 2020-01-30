@@ -22,7 +22,7 @@
 	</fragment>
 	<fragment
 		android:id="@+id/profileFragment"
-		android:name="com.example.bechat.ui.ProfileFragment"
+		android:name="com.example.bechat.ui.profile.ProfileFragment"
 		android:label="ProfileFragment"
 		tools:layout="@layout/fragment_profile"
 		>
@@ -33,6 +33,22 @@
 		android:name="com.example.bechat.ui.chatdetail.ChatDetailFragment"
 		android:label="ChatDetailFragment"
 		tools:layout="@layout/fragment_chat_detail"
+		>
+
+	</fragment>
+	<fragment
+		android:id="@+id/ViewProfileFragment"
+		android:name="com.example.bechat.ui.profile.ViewProfileFragment"
+		android:label="ViewProfileFragment"
+		tools:layout="@layout/fragment_view_avatar"
+		>
+
+	</fragment>
+	<fragment
+		android:id="@+id/EditProfileFragment"
+		android:name="com.example.bechat.ui.profile.EditProfileFragment"
+		android:label="EditProfileFragment"
+		tools:layout="@layout/fragment_view_avatar"
 		>
 
 	</fragment>

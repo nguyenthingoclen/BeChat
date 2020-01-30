@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bechat.R
+import com.example.bechat.data.local.SharePrefer
 import com.example.bechat.helper.Util
 import com.example.bechat.model.ChatData
 import com.example.bechat.model.User
@@ -22,6 +23,7 @@ import kotlinx.android.synthetic.main.fragment_chat.*
 class ChatFragment :Fragment(){
 
     lateinit var adapter: AdapterListChat
+    lateinit var sharedPrefer : SharePrefer
     private var chatList = mutableListOf<User>()
     private var currentUser = FirebaseAuth.getInstance().currentUser
     override fun onCreateView(
@@ -35,6 +37,7 @@ class ChatFragment :Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter = AdapterListChat(chatList,context!!)
+        sharedPrefer = SharePrefer(context!!)
         chatRecyclerView.layoutManager= LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
         chatRecyclerView.adapter = adapter
         getFriends()
@@ -49,9 +52,7 @@ class ChatFragment :Fragment(){
         })
 
 
-        imgSettingChat.setOnClickListener {
 
-        }
         searchETx.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
 
@@ -87,8 +88,9 @@ class ChatFragment :Fragment(){
             override fun onDataChange(p0: DataSnapshot) {
                 chatList.clear()
                 var user = p0.getValue(User::class.java)
-                Log.d("TAG:ChatFragment","getFriends: ${user?.friends.toString()}")
-                for (id in user?.friends!!){
+                sharedPrefer.setName(user?.username!!)
+                Log.d("TAG:ChatFragment","getFriends: ${user.friends.toString()}")
+                for (id in user.friends!!){
                     var reference = FirebaseDatabase.getInstance().getReference("Users").child(id)
                     reference.addValueEventListener(object : ValueEventListener {
                         override fun onCancelled(p0: DatabaseError) {
