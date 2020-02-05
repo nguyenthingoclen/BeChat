@@ -12,13 +12,11 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity :AppCompatActivity() {
 
-    private var isChatDetailFragment = false
+    var isThirdFragment = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         bottomMain.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentPlace)
-        val backStackEntryCount = navHostFragment?.childFragmentManager?.fragments?.size
 
     }
     private val mOnNavigationItemSelectedListener = object : BottomNavigationView.OnNavigationItemSelectedListener {
@@ -52,7 +50,7 @@ class MainActivity :AppCompatActivity() {
     }
 
     fun handleronBackPressed(isDetail : Boolean){
-       isChatDetailFragment = isDetail
+        isThirdFragment = isDetail
         if (isDetail){
             window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
         }else{
@@ -61,12 +59,13 @@ class MainActivity :AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if (isChatDetailFragment){
+        if (isThirdFragment){
             showBottomNavigation()
             this@MainActivity.findNavController(R.id.fragmentPlace).navigateUp()
+            isThirdFragment = false
         }
         else{
-            super.onBackPressed()
+            finish()
         }
 
 

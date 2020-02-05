@@ -3,6 +3,7 @@ package com.example.bechat.ui
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,7 @@ import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.fragment_chat_detail.*
 import java.lang.Exception
 
 class LoginActivity : AppCompatActivity(),View.OnClickListener{
@@ -45,6 +47,16 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener{
         loginBtn.setOnClickListener(this)
         signUpText.setOnClickListener(this)
         forgottext.setOnClickListener(this)
+        emailEdittext.setOnFocusChangeListener { v, hasFocus ->
+            if (!hasFocus){
+                Util.hideKeyboard(this, emailEdittext)
+            }
+        }
+        passwordEdittext.setOnFocusChangeListener { v, hasFocus ->
+            if (!hasFocus){
+                Util.hideKeyboard(this, passwordEdittext)
+            }
+        }
     }
     override fun onClick(v: View?) {
         when(v?.id){
@@ -74,6 +86,9 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener{
                     override fun onComplete(p0: Task<AuthResult>) {
                         if (p0.isSuccessful) {
                             sharedPrefer.setStatus(true)
+                            sharedPrefer.setPassword(passwordEdittext.text.toString())
+                            Log.d("TAG:LoginActivity","data: ${p0.getResult()}")
+                            //sharedPrefer.setName(p0.result)
                             var intent = Intent(this@LoginActivity,MainActivity ::class.java)
                             startActivity(intent)
                             finish()

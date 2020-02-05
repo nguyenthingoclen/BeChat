@@ -37,7 +37,7 @@ object Util{
         if (day == today){
             return this.subSequence(16,21).toString()
         }else{
-            return this.subSequence(5,10).toString()
+            return this.subSequence(4,10).toString()
         }
     }
 
@@ -45,7 +45,7 @@ object Util{
         val day = this.subSequence(4,15).toString()
         val today = SimpleDateFormat("DD MMM yyyy").format(java.util.Date()).toString()
         if (day == today){
-            return this.subSequence(16,21).toString()
+            return this.subSequence(15,21).toString()
         }else{
             return this.subSequence(4,10).toString() + " AT " +this.subSequence(16,21).toString()
         }
