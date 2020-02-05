@@ -47,7 +47,7 @@ class ChatDetailFragment: Fragment() {
         chatDetailRecyclerView.layoutManager= LinearLayoutManager(context, LinearLayoutManager.VERTICAL,false)
         chatDetailRecyclerView.adapter = adapter
         getUser(currentUser!!.uid)
-
+        nameUserDetailChatTx.text = arguments?.getString("name user")
         getMessage()
         val idReceiver = arguments?.getString("user")
         reference = FirebaseDatabase.getInstance().getReference("Users").child(idReceiver!!)
@@ -58,7 +58,6 @@ class ChatDetailFragment: Fragment() {
             override fun onDataChange(p0: DataSnapshot) {
                 receiver = p0.getValue(User ::class.java)
 
-                nameUserDetailChatTx.text = receiver?.username
                 if (!receiver?.avatarURL.equals("default")){
                     Glide.with(context!!)
                             .load(receiver?.avatarURL)

@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bechat.R
 import com.example.bechat.helper.Util
@@ -39,11 +40,13 @@ class UserFragment :Fragment(){
         super.onViewCreated(view, savedInstanceState)
         adapter = AdapterUserList(userList, context!!)
         userRecyclerView.layoutManager= LinearLayoutManager(context, LinearLayoutManager.VERTICAL,false)
+        userRecyclerView.addItemDecoration(DividerItemDecoration(context,LinearLayoutManager.VERTICAL))
         userRecyclerView.adapter = adapter
         adapter.onClickItemListenner(object :AdapterUserList.OnClickItemListener{
             override fun onItemClick(user: User) {
                 var bundle = Bundle()
                 bundle.putString("user",user.id)
+                bundle.putString("name user",user.username)
                 view.findNavController().navigate(R.id.chatDetailFragment,bundle)
                 Util.hideKeyboard(context!!,view)
             }

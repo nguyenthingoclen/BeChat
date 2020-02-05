@@ -21,6 +21,10 @@ import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.bechat.R
+import com.example.bechat.common.Constans.CODE_PICK_IMAGE
+import com.example.bechat.common.Constans.CODE_REQUEST_PERMISSTION
+import com.example.bechat.common.Constans.CODE_REQUEST_PERMISSTION_WRITE
+import com.example.bechat.common.Constans.REQUEST_IMAGE_CAPTURE
 import com.example.bechat.data.local.SharePrefer
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
@@ -37,10 +41,6 @@ import kotlinx.android.synthetic.main.bottom_sheet_image.view.*
 
 class SignUpActivity : AppCompatActivity(){
 
-    private val CODE_REQUEST_PERMISSTION_WRITE = 1
-    private val REQUEST_IMAGE_CAPTURE = 2
-    private val CODE_REQUEST_PERMISSTION = 3
-    private val CODE_PICK_IMAGE = 4
     private var auth : FirebaseAuth?= null
     private var hidePass1 = true
     private var hidePass2 = true
@@ -156,8 +156,6 @@ class SignUpActivity : AppCompatActivity(){
             auth?.createUserWithEmailAndPassword(emailRegisterEdit.text.toString(), passWordRegisterEdit.text.toString())
                     ?.addOnCompleteListener(this) { p0 ->
                         if (p0.isSuccessful) {
-
-
                             var firebaseUser = auth!!.currentUser
                             var userId = firebaseUser?.uid
                             var friends = mutableListOf<String>()
@@ -251,6 +249,7 @@ class SignUpActivity : AppCompatActivity(){
 
     @SuppressLint("MissingSuperCall")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        Log.d("TAG:SignUpActivity","onActivityResult: $requestCode")
         if(requestCode==CODE_PICK_IMAGE){
             if(resultCode== Activity.RESULT_OK){
                 avatarRegisterImg.setImageDrawable(null)

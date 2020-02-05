@@ -38,7 +38,7 @@ class ViewProfileFragment :Fragment(){
 
             override fun onDataChange(p0: DataSnapshot) {
                 var user : User = p0.getValue(User ::class.java)!!
-                Glide.with(this@ViewProfileFragment)
+                Glide.with(context!!)
                         .load(user.avatarURL)
                         .into(avatarImg)
             }

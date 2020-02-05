@@ -10,7 +10,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.bechat.R
 import com.example.bechat.data.local.SharePrefer
 import com.example.bechat.helper.Util
@@ -39,12 +41,14 @@ class ChatFragment :Fragment(){
         adapter = AdapterListChat(chatList,context!!)
         sharedPrefer = SharePrefer(context!!)
         chatRecyclerView.layoutManager= LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
+        chatRecyclerView.addItemDecoration(DividerItemDecoration(context,LinearLayoutManager.VERTICAL))
         chatRecyclerView.adapter = adapter
         getFriends()
         adapter.onClickItemListenner(object :AdapterListChat.OnClickItemListener{
             override fun onItemClick(user: User) {
                 var bundle = Bundle()
                 bundle.putString("user",user.id)
+                bundle.putString("name user",user.username)
                 view.findNavController().navigate(R.id.chatDetailFragment,bundle)
                 Util.hideKeyboard(context!!,view)
             }
