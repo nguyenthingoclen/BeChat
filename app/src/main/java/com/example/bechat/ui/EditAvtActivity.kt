@@ -138,11 +138,9 @@ class EditAvtActivity : AppCompatActivity() {
     @SuppressLint("MissingSuperCall")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         var image :Bitmap?= null
-        if(requestCode== Constans.CODE_PICK_IMAGE){
-            if(resultCode== Activity.RESULT_OK){
-                uriImage = data!!.data
-                image = MediaStore.Images.Media.getBitmap(this.contentResolver, uriImage)
-            }
+        if(requestCode == Constans.CODE_PICK_IMAGE && resultCode == Activity.RESULT_OK){
+            uriImage = data!!.data
+            image = MediaStore.Images.Media.getBitmap(this.contentResolver, uriImage)
         }
         if (requestCode == Constans.REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             image = data?.extras?.get("data") as Bitmap

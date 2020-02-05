@@ -36,7 +36,7 @@
 	<string name="save">Save</string>
 	<string name="old_password">Old Password</string>
 	<string name="language">Language</string>
-	<string name="themes">Theme</string>
+	<string name="theme">Themes</string>
 	<string name="title_activity_edit_avt">EditAvtActivity</string>
 
 </resources>
